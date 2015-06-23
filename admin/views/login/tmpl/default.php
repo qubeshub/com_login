@@ -35,7 +35,7 @@ defined('_JEXEC') or die;
 // If you want to use a completely different login module change the value of name
 // in your layout override.
 
-$loginmodule = \Components\Login\Models\Login::getLoginModule('mod_login');
+$loginmodule = \Components\Login\Models\Login::getLoginModule('mod_adminlogin');
 
 echo Module::render($loginmodule, array('style' => 'rounded', 'id' => 'section-box'));
 
@@ -47,7 +47,7 @@ $modules = Module::byPosition('login');
 foreach ($modules as $module)
 {
 	// Render the login modules
-	if ($module->module != 'mod_login')
+	if ($module->module != 'mod_adminlogin')
 	{
 		echo Module::render($module, array('style' => 'rounded', 'id' => 'section-box'));
 	}
