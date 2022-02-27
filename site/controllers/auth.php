@@ -345,15 +345,15 @@ class Auth extends SiteController
 	 *
 	 * @return  void
 	 */
-	public function loginTask()
+	public function loginTask($protocol = 'post')
 	{
 		// Populate the data array:
 		$options = array();
 
 		$data = array(
-			'username' => Request::getString('username', '', 'post'),
-			'password' => Request::getString('passwd', '', 'post'),
-			'return'   => Request::getString('return', '', 'post')
+			'username' => Request::getString('username', '', $protocol),
+			'password' => Request::getString('passwd', '', $protocol),
+			'return'   => Request::getString('return', '', $protocol)
 		);
 		if (!$this->isBase64($data['return']))
 		{
