@@ -157,13 +157,13 @@ class Auth extends SiteController
 		$defaultReturn = base64_encode($defaultReturn);
 
 		$uri = Uri::getInstance();
-		if ($rtrn = $uri->getVar('return'))
+		if ($rtrn = $uri->getUriVar('return'))
 		{
 			if (!$this->isBase64($rtrn))
 			{
 				// This isn't a base64 string and most likely is
 				// someone trying to do something nasty (XSS)
-				$uri->setVar('return', $defaultReturn);
+				$uri->setUriVar('return', $defaultReturn);
 			}
 		}
 		$furl = base64_encode($uri->toString());
@@ -184,9 +184,9 @@ class Auth extends SiteController
 				$decoded_return = base64_decode($return);
 
 				$dr = new Uri($decoded_return);
-				if ($dr->hasVar('authenticator'))
+				if ($dr->hasUriVar('authenticator'))
 				{
-					$auth = $dr->getVar('authenticator');
+					$auth = $dr->getUriVar('authenticator');
 				}
 				/*$query  = parse_url($decoded_return);
 				if (is_array($query) && isset($query['query']))
