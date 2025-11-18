@@ -1,3 +1,34 @@
+<style>
+#content.com_users .auth:before,
+#content.com_users .auth:after {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+}
+
+.auth .bootstrap-select {
+        white-space: normal;
+        position: static;
+}
+.auth .bootstrap-select .btn-default {
+        position: absolute;
+        top: 9px;
+        left: 45px;
+}
+
+.hz_user>p {
+        margin: 1em;
+}
+
+@media only screen  and (min-width : 1024px) {
+        .hz_user>p {
+                max-width: 700px;
+                margin: 2em auto;
+        }
+}
+</style>
+
+
 <?php
 /**
  * @package    hubzero-cms
